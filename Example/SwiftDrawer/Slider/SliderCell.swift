@@ -26,11 +26,3 @@ struct SliderCell : View {
         self.title = title
     }
 }
-
-#if DEBUG
-struct SliderCell_Previews : PreviewProvider {
-    static var previews: some View {
-        SliderCell()
-    }
-}
-#endif

@@ -35,12 +35,3 @@ struct SliderView : View, SliderProtocol {
         
     }
 }
-
-
-#if DEBUG
-struct SliderView_Previews : PreviewProvider {
-    static var previews: some View {
-        SliderView()
-    }
-}
-#endif

@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftDrawer",
+        "repositoryURL": "/Users/antran/Desktop/Projects/iOS/OpenSource/SwiftDrawer",
+        "state": {
+          "branch": "spm",
+          "revision": "14d43af11f137ae2de0cb1f78fc9c1ade59eadbf",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
