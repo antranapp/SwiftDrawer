@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		076F0609117018F71F2B2D930EFF3B68 /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C366F034D8E7109A52E813BB72C54CC /* MainContainer.swift */; };
+		076F0609117018F71F2B2D930EFF3B68 /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6D35F60CC265E5FBA8375CF4F226DE /* MainContainer.swift */; };
 		0AD8AF7A87759A0B41113D54CCE49997 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		1708430B59B6AD75FE46BA9F7C57DC65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		2F4C4476627A4DAAD5BF4392C7B64A54 /* SliderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DB6C11C028E98C00DAC2BB98B41B56 /* SliderStatus.swift */; };
-		411D57464FE0D5871707C0ED1553F303 /* SwiftDrawer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65853809A275AB6D57AD07D91207D39B /* SwiftDrawer-dummy.m */; };
+		2F4C4476627A4DAAD5BF4392C7B64A54 /* SliderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1593A850DCD51BACCB846E041211AC /* SliderStatus.swift */; };
+		411D57464FE0D5871707C0ED1553F303 /* SwiftDrawer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D27B8FBFB7BE5AB6060644A4C6F8AA /* SwiftDrawer-dummy.m */; };
 		4D7CC1D642922208EA5F89F6811B6B1D /* Pods-SwiftDrawer_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9D384FADB54AD0C391A3DB08F188923 /* Pods-SwiftDrawer_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7440C55F308FC43553494949B165DBE0 /* Pods-SwiftDrawer_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9087DFE674CBD0B5306C148D1549777E /* Pods-SwiftDrawer_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		81DCF09988598FCE9A18C38AB01F60C9 /* Pods-SwiftDrawer_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A6A49F8F0BBB2AAB3DBCD7B3A365C /* Pods-SwiftDrawer_Example-dummy.m */; };
-		83E124AEB776040F4E652C3ED4DE9781 /* DrawerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA94F9EC77DE5395AC5815CBD39E914 /* DrawerControl.swift */; };
-		8639E5297929994ADCC16B7BC1567DF4 /* SwiftDrawer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6983E9DEB2EF5848FBE9EC2F9B36CB54 /* SwiftDrawer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83E124AEB776040F4E652C3ED4DE9781 /* DrawerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7C62F25C9D52E616A6C56A00306289 /* DrawerControl.swift */; };
+		8639E5297929994ADCC16B7BC1567DF4 /* SwiftDrawer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EB705B946FC08291D163A67D72D2F548 /* SwiftDrawer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93A25AA17881FD2A95518EA9397512E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		96AF0FA8090296A0806C546AE2B4F693 /* Pods-SwiftDrawer_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DC2BF9B692C5AA728886359DE93EE1 /* Pods-SwiftDrawer_Tests-dummy.m */; };
-		A9DDFD6CE7A15575DF420A51FC9F3E0C /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF65EBE8994C36BF4EAF7CB0ECE32E /* Drawer.swift */; };
-		B7B70F29392F659D9BA49B50FA31378A /* DrawerDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7545EB2A4B6F16398BE2D0B827CB72AD /* DrawerDefine.swift */; };
-		E995F5D238FACF165D071A8522BA1C1F /* SliderContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683E1650D7154EF3C1C6267A0649C4C2 /* SliderContainer.swift */; };
+		A9DDFD6CE7A15575DF420A51FC9F3E0C /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9901AA31F63D897278E654D44821B4F3 /* Drawer.swift */; };
+		B7B70F29392F659D9BA49B50FA31378A /* DrawerDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE144220BB87814DC3A400672ACA8EC5 /* DrawerDefine.swift */; };
+		E995F5D238FACF165D071A8522BA1C1F /* SliderContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062702C29FAD460512C1AA1FB00A7FFE /* SliderContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,41 +43,42 @@
 
 /* Begin PBXFileReference section */
 		0447D6650799A791E19035F7B0DCED3E /* Pods-SwiftDrawer_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftDrawer_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		1AFACAA3147081FD0BA92EBFB768AA8B /* SwiftDrawer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftDrawer.xcconfig; sourceTree = "<group>"; };
-		1C366F034D8E7109A52E813BB72C54CC /* MainContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MainContainer.swift; path = SwiftDrawer/Classes/MainContainer.swift; sourceTree = "<group>"; };
-		26DBB7C0A636A42EE517B8B941F2390D /* SwiftDrawer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftDrawer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C59A73F487056B549F952F35064033D /* Pods_SwiftDrawer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDrawer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		062702C29FAD460512C1AA1FB00A7FFE /* SliderContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SliderContainer.swift; path = SwiftDrawer/Classes/SliderContainer.swift; sourceTree = "<group>"; };
+		0E1593A850DCD51BACCB846E041211AC /* SliderStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SliderStatus.swift; path = SwiftDrawer/Classes/SliderStatus.swift; sourceTree = "<group>"; };
+		25D27B8FBFB7BE5AB6060644A4C6F8AA /* SwiftDrawer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftDrawer-dummy.m"; sourceTree = "<group>"; };
+		26DBB7C0A636A42EE517B8B941F2390D /* SwiftDrawer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftDrawer.framework; path = SwiftDrawer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A93D862A42B3E5D56E06C13DE1A7279 /* SwiftDrawer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftDrawer.release.xcconfig; sourceTree = "<group>"; };
+		2C59A73F487056B549F952F35064033D /* Pods_SwiftDrawer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftDrawer_Example.framework; path = "Pods-SwiftDrawer_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4ACF65EBE8994C36BF4EAF7CB0ECE32E /* Drawer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Drawer.swift; path = SwiftDrawer/Classes/Drawer.swift; sourceTree = "<group>"; };
+		45E410BA6B870FA4B8D0C4DCC01082E8 /* SwiftDrawer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftDrawer.modulemap; sourceTree = "<group>"; };
+		48EFDA2B30CAB77D3D2AC3DDFF3ADDF9 /* SwiftDrawer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftDrawer.debug.xcconfig; sourceTree = "<group>"; };
 		4AF1E823AA6CDF1A0E9195737EDEF56C /* Pods-SwiftDrawer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftDrawer_Example.release.xcconfig"; sourceTree = "<group>"; };
+		4CFB9494B49AA6529BA9B46BBFB9009F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		52DC2BF9B692C5AA728886359DE93EE1 /* Pods-SwiftDrawer_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftDrawer_Tests-dummy.m"; sourceTree = "<group>"; };
 		573828E3A7017F7B761BF3CF6E235646 /* Pods-SwiftDrawer_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftDrawer_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5FA94F9EC77DE5395AC5815CBD39E914 /* DrawerControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DrawerControl.swift; path = SwiftDrawer/Classes/DrawerControl.swift; sourceTree = "<group>"; };
 		6559D71EE85BF987FD8B0683DA4761DB /* Pods-SwiftDrawer_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftDrawer_Example.modulemap"; sourceTree = "<group>"; };
-		65853809A275AB6D57AD07D91207D39B /* SwiftDrawer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftDrawer-dummy.m"; sourceTree = "<group>"; };
-		683E1650D7154EF3C1C6267A0649C4C2 /* SliderContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SliderContainer.swift; path = SwiftDrawer/Classes/SliderContainer.swift; sourceTree = "<group>"; };
-		6983E9DEB2EF5848FBE9EC2F9B36CB54 /* SwiftDrawer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftDrawer-umbrella.h"; sourceTree = "<group>"; };
 		6F178906CE9A7E760CBF2325D7C3EE2B /* Pods-SwiftDrawer_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftDrawer_Tests.modulemap"; sourceTree = "<group>"; };
-		7545EB2A4B6F16398BE2D0B827CB72AD /* DrawerDefine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DrawerDefine.swift; path = SwiftDrawer/Classes/DrawerDefine.swift; sourceTree = "<group>"; };
-		806476DD5349E5C6525A2EB8B9B7A15E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		81DB6C11C028E98C00DAC2BB98B41B56 /* SliderStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SliderStatus.swift; path = SwiftDrawer/Classes/SliderStatus.swift; sourceTree = "<group>"; };
-		83A571ED5638E30DF20170566EEB973C /* SwiftDrawer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftDrawer-prefix.pch"; sourceTree = "<group>"; };
-		868253018D0A5D43CAEED38D127767AB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		77DA9218F38BA643EABBC4D984AAA1F9 /* SwiftDrawer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SwiftDrawer.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9087DFE674CBD0B5306C148D1549777E /* Pods-SwiftDrawer_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftDrawer_Example-umbrella.h"; sourceTree = "<group>"; };
-		9AF8AE5A3E629264999D4516B09BAA93 /* SwiftDrawer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SwiftDrawer.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9901AA31F63D897278E654D44821B4F3 /* Drawer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Drawer.swift; path = SwiftDrawer/Classes/Drawer.swift; sourceTree = "<group>"; };
+		99AC168E02E6DE1BF9F70FA71C462BE1 /* SwiftDrawer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftDrawer-Info.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F6D35F60CC265E5FBA8375CF4F226DE /* MainContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MainContainer.swift; path = SwiftDrawer/Classes/MainContainer.swift; sourceTree = "<group>"; };
 		A302D5AB59A750B9E4EC989E52574804 /* Pods-SwiftDrawer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftDrawer_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		AF3F466E0C389A0ECDB13E94E132BD71 /* Pods-SwiftDrawer_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftDrawer_Tests-Info.plist"; sourceTree = "<group>"; };
 		B021A7A2BE85D62AF5167B6DD5E43D1F /* Pods-SwiftDrawer_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftDrawer_Example-frameworks.sh"; sourceTree = "<group>"; };
-		BEBC597DA9100CBB8A3AC68A64260806 /* Pods_SwiftDrawer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDrawer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD65124E49C601BBDCA5E500F573DE16 /* SwiftDrawer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftDrawer-prefix.pch"; sourceTree = "<group>"; };
+		BEBC597DA9100CBB8A3AC68A64260806 /* Pods_SwiftDrawer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftDrawer_Tests.framework; path = "Pods-SwiftDrawer_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C319DCA86695C393457832B3DF8E1536 /* Pods-SwiftDrawer_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftDrawer_Example-Info.plist"; sourceTree = "<group>"; };
 		CA9151DCC772F2EC1963D4C9601232B6 /* Pods-SwiftDrawer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftDrawer_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DA6A63BA485BF83E6755E551AB08BC04 /* Pods-SwiftDrawer_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftDrawer_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		DBC4ADA7854AAF08036E7F7CDD98CB0E /* SwiftDrawer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftDrawer.modulemap; sourceTree = "<group>"; };
+		DD455BEC130D11996ACA9169E09BF52F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		DE144220BB87814DC3A400672ACA8EC5 /* DrawerDefine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DrawerDefine.swift; path = SwiftDrawer/Classes/DrawerDefine.swift; sourceTree = "<group>"; };
 		EA325C25AF98BDBCC90F890B047C928D /* Pods-SwiftDrawer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftDrawer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		EBD9A17A0A541EF24C87E06C210490A1 /* SwiftDrawer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftDrawer-Info.plist"; sourceTree = "<group>"; };
+		EB705B946FC08291D163A67D72D2F548 /* SwiftDrawer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftDrawer-umbrella.h"; sourceTree = "<group>"; };
 		EC7A6A49F8F0BBB2AAB3DBCD7B3A365C /* Pods-SwiftDrawer_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftDrawer_Example-dummy.m"; sourceTree = "<group>"; };
 		F9D384FADB54AD0C391A3DB08F188923 /* Pods-SwiftDrawer_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftDrawer_Tests-umbrella.h"; sourceTree = "<group>"; };
+		FD7C62F25C9D52E616A6C56A00306289 /* DrawerControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DrawerControl.swift; path = SwiftDrawer/Classes/DrawerControl.swift; sourceTree = "<group>"; };
 		FF175570FCB731E248C4130977295650 /* Pods-SwiftDrawer_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftDrawer_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,20 +110,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04CFAB92466A7D78F7982649CAB5DFE2 /* SwiftDrawer */ = {
+		1B3EAB15003C25E22F143EEF72A3DA28 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4ACF65EBE8994C36BF4EAF7CB0ECE32E /* Drawer.swift */,
-				5FA94F9EC77DE5395AC5815CBD39E914 /* DrawerControl.swift */,
-				7545EB2A4B6F16398BE2D0B827CB72AD /* DrawerDefine.swift */,
-				1C366F034D8E7109A52E813BB72C54CC /* MainContainer.swift */,
-				683E1650D7154EF3C1C6267A0649C4C2 /* SliderContainer.swift */,
-				81DB6C11C028E98C00DAC2BB98B41B56 /* SliderStatus.swift */,
-				2BC5BE74CE19652A5736D69745BC7C27 /* Pod */,
-				A6D39C31E24BAD855199ACB4474BE756 /* Support Files */,
+				45E410BA6B870FA4B8D0C4DCC01082E8 /* SwiftDrawer.modulemap */,
+				25D27B8FBFB7BE5AB6060644A4C6F8AA /* SwiftDrawer-dummy.m */,
+				99AC168E02E6DE1BF9F70FA71C462BE1 /* SwiftDrawer-Info.plist */,
+				BD65124E49C601BBDCA5E500F573DE16 /* SwiftDrawer-prefix.pch */,
+				EB705B946FC08291D163A67D72D2F548 /* SwiftDrawer-umbrella.h */,
+				48EFDA2B30CAB77D3D2AC3DDFF3ADDF9 /* SwiftDrawer.debug.xcconfig */,
+				2A93D862A42B3E5D56E06C13DE1A7279 /* SwiftDrawer.release.xcconfig */,
 			);
-			name = SwiftDrawer;
-			path = ../..;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SwiftDrawer";
 			sourceTree = "<group>";
 		};
 		1DE3346AE0FCEDF5E65474A55399A0C5 /* Pods-SwiftDrawer_Tests */ = {
@@ -139,16 +139,6 @@
 			);
 			name = "Pods-SwiftDrawer_Tests";
 			path = "Target Support Files/Pods-SwiftDrawer_Tests";
-			sourceTree = "<group>";
-		};
-		2BC5BE74CE19652A5736D69745BC7C27 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				806476DD5349E5C6525A2EB8B9B7A15E /* LICENSE */,
-				868253018D0A5D43CAEED38D127767AB /* README.md */,
-				9AF8AE5A3E629264999D4516B09BAA93 /* SwiftDrawer.podspec */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		411140ED99FD3B3C0E085EFFBAA70E65 /* Pods-SwiftDrawer_Example */ = {
@@ -168,18 +158,14 @@
 			path = "Target Support Files/Pods-SwiftDrawer_Example";
 			sourceTree = "<group>";
 		};
-		A6D39C31E24BAD855199ACB4474BE756 /* Support Files */ = {
+		8A9E4423C70D65E312B2782CF6351040 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				DBC4ADA7854AAF08036E7F7CDD98CB0E /* SwiftDrawer.modulemap */,
-				1AFACAA3147081FD0BA92EBFB768AA8B /* SwiftDrawer.xcconfig */,
-				65853809A275AB6D57AD07D91207D39B /* SwiftDrawer-dummy.m */,
-				EBD9A17A0A541EF24C87E06C210490A1 /* SwiftDrawer-Info.plist */,
-				83A571ED5638E30DF20170566EEB973C /* SwiftDrawer-prefix.pch */,
-				6983E9DEB2EF5848FBE9EC2F9B36CB54 /* SwiftDrawer-umbrella.h */,
+				DD455BEC130D11996ACA9169E09BF52F /* LICENSE */,
+				4CFB9494B49AA6529BA9B46BBFB9009F /* README.md */,
+				77DA9218F38BA643EABBC4D984AAA1F9 /* SwiftDrawer.podspec */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/SwiftDrawer";
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		B42D9467CF278985C7BCA883480620A4 /* Products */ = {
@@ -198,6 +184,22 @@
 				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		C8AE2F1D345CAEA36AC6644C623DEFD0 /* SwiftDrawer */ = {
+			isa = PBXGroup;
+			children = (
+				9901AA31F63D897278E654D44821B4F3 /* Drawer.swift */,
+				FD7C62F25C9D52E616A6C56A00306289 /* DrawerControl.swift */,
+				DE144220BB87814DC3A400672ACA8EC5 /* DrawerDefine.swift */,
+				9F6D35F60CC265E5FBA8375CF4F226DE /* MainContainer.swift */,
+				062702C29FAD460512C1AA1FB00A7FFE /* SliderContainer.swift */,
+				0E1593A850DCD51BACCB846E041211AC /* SliderStatus.swift */,
+				8A9E4423C70D65E312B2782CF6351040 /* Pod */,
+				1B3EAB15003C25E22F143EEF72A3DA28 /* Support Files */,
+			);
+			name = SwiftDrawer;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -222,7 +224,7 @@
 		D2A0F2FFC5EE5427EF5DC3B8D95502D1 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				04CFAB92466A7D78F7982649CAB5DFE2 /* SwiftDrawer */,
+				C8AE2F1D345CAEA36AC6644C623DEFD0 /* SwiftDrawer */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -337,6 +339,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = B42D9467CF278985C7BCA883480620A4 /* Products */;
@@ -511,7 +514,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -553,71 +557,6 @@
 			};
 			name = Release;
 		};
-		40F4A9FA6A05F4EB78A8A1550B5A7807 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AFACAA3147081FD0BA92EBFB768AA8B /* SwiftDrawer.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftDrawer/SwiftDrawer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftDrawer/SwiftDrawer-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftDrawer/SwiftDrawer.modulemap";
-				PRODUCT_MODULE_NAME = SwiftDrawer;
-				PRODUCT_NAME = SwiftDrawer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		46E618234F8EEBE6AC47CC5BA16CB110 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AFACAA3147081FD0BA92EBFB768AA8B /* SwiftDrawer.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftDrawer/SwiftDrawer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftDrawer/SwiftDrawer-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftDrawer/SwiftDrawer.modulemap";
-				PRODUCT_MODULE_NAME = SwiftDrawer;
-				PRODUCT_NAME = SwiftDrawer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		679C194C188AA461D065D162CC0DDE28 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A302D5AB59A750B9E4EC989E52574804 /* Pods-SwiftDrawer_Tests.release.xcconfig */;
@@ -647,6 +586,73 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B894EB6C2D0EEEF3E9A576E2776BD2A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48EFDA2B30CAB77D3D2AC3DDFF3ADDF9 /* SwiftDrawer.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftDrawer/SwiftDrawer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftDrawer/SwiftDrawer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftDrawer/SwiftDrawer.modulemap";
+				PRODUCT_MODULE_NAME = SwiftDrawer;
+				PRODUCT_NAME = SwiftDrawer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BA8B9385EBE74E68EBB82D6499D4B6A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A93D862A42B3E5D56E06C13DE1A7279 /* SwiftDrawer.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftDrawer/SwiftDrawer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftDrawer/SwiftDrawer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftDrawer/SwiftDrawer.modulemap";
+				PRODUCT_MODULE_NAME = SwiftDrawer;
+				PRODUCT_NAME = SwiftDrawer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -759,8 +765,8 @@
 		07C62934478D662216E7E048A1CAF900 /* Build configuration list for PBXNativeTarget "SwiftDrawer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				46E618234F8EEBE6AC47CC5BA16CB110 /* Debug */,
-				40F4A9FA6A05F4EB78A8A1550B5A7807 /* Release */,
+				B894EB6C2D0EEEF3E9A576E2776BD2A4 /* Debug */,
+				BA8B9385EBE74E68EBB82D6499D4B6A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

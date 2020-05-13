@@ -1,5 +1,5 @@
 PODS:
-  - SwiftDrawer (0.1.0)
+  - SwiftDrawer (5.0.2)
 
 DEPENDENCIES:
   - SwiftDrawer (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SwiftDrawer: 17e70567d4a42fd7fc8ebcf90d15783b6e8f5740
+  SwiftDrawer: 2ed1b1e13fa46323bb04b6cc417c05edf51b1b4a
 
 PODFILE CHECKSUM: ff97934ff6ce85226cded4803a8bb2108de4253c
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.9.1
