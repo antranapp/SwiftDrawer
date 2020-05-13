@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+
 public enum SliderType {
     case leftRear
     case rightRear
@@ -43,10 +44,8 @@ public enum ShowStatus {
     }
 }
 
-
-
 public protocol SliderProtocol {
     var type: SliderType {get}
-    init(type: SliderType)
 }
+
 public typealias SliderViewProtocol = (View & SliderProtocol)

@@ -1,8 +1,8 @@
 {
   "name": "SwiftDrawer",
-  "version": "0.1.0",
-  "summary": "A short description of SwiftDrawer.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "5.0.2",
+  "summary": "Drawer in SwiftUI",
+  "description": "A Drawer view implement on SwiftUI",
   "homepage": "https://github.com/MillmanY/SwiftDrawer",
   "license": {
     "type": "MIT",
@@ -13,10 +13,12 @@
   },
   "source": {
     "git": "https://github.com/MillmanY/SwiftDrawer.git",
-    "tag": "0.1.0"
+    "tag": "5.0.2"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "13.0"
   },
-  "source_files": "SwiftDrawer/Classes/**/*"
+  "swift_versions": "5.0",
+  "source_files": "SwiftDrawer/Classes/**/*",
+  "swift_version": "5.0"
 }

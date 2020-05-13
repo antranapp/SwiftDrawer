@@ -18,11 +18,3 @@ struct Slider2View : View, SliderProtocol {
     }
 
 }
-
-#if DEBUG
-struct Slider2View_Previews : PreviewProvider {
-    static var previews: some View {
-        Slider2View()
-    }
-}
-#endif
