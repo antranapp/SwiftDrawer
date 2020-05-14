@@ -41,8 +41,9 @@ public class DrawerControl: ObservableObject {
 
     public func setSlider<Slider: SliderViewProtocol>(view: Slider,
                                                       widthType: SliderWidth = .percent(rate: 0.6),
-                                                      shadowRadius: CGFloat = 10) {
-        let status = SliderStatus(type: view.type)
+                                                      shadowRadius: CGFloat = 10,
+                                                      initialShowStatus: ShowStatus = .hide) {
+        let status = SliderStatus(type: view.type, initialShowStatus: initialShowStatus)
         
         status.maxWidth = widthType
         status.shadowRadius = shadowRadius

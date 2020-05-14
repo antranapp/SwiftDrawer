@@ -9,11 +9,11 @@
 import SwiftUI
 import SwiftDrawer
 struct SliderView : View, SliderProtocol {
+
     @EnvironmentObject public var drawerControl: DrawerControl
+
     let type: SliderType
-    init(type: SliderType) {
-        self.type = type
-    }
+
     var body: some View {
         
         List {

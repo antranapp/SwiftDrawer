@@ -8,13 +8,13 @@
 
 import SwiftUI
 import SwiftDrawer
+
 struct Slider2View : View, SliderProtocol {
+
+    let type: SliderType
+    
     var body: some View {
         Text("Slider 2 View!")
-    }
-    let type: SliderType
-    init(type: SliderType) {
-        self.type = type
     }
 
 }

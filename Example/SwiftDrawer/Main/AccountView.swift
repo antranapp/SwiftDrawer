@@ -8,8 +8,11 @@
 
 import SwiftUI
 import SwiftDrawer
+
 struct AccountView : View {
+    
     @EnvironmentObject public var control: DrawerControl
+    
     var body: some View {
         NavigationView {
             VStack {
