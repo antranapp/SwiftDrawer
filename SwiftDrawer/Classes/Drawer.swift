@@ -10,7 +10,9 @@ import SwiftUI
 import Combine
 
 public struct Drawer: View {
+    
     @ObservedObject private var drawerControl = DrawerControl()
+    
     public var body: some View {
         ZStack {
             drawerControl.sliderView[.leftRear]
@@ -29,9 +31,15 @@ public struct Drawer: View {
     
     @discardableResult
     public func setSlider<Slider: SliderViewProtocol>(view: Slider,
-                                                widthType: SliderWidth = .percent(rate: 0.6),
-                                                shadowRadius: CGFloat = 10) -> Drawer{
-        drawerControl.setSlider(view: view, widthType: widthType, shadowRadius: shadowRadius)
+                                                      widthType: SliderWidth = .percent(rate: 0.6),
+                                                      shadowRadius: CGFloat = 10,
+                                                      initialShowStatus: ShowStatus = .hide) -> Drawer{
+        drawerControl.setSlider(
+            view: view,
+            widthType: widthType,
+            shadowRadius: shadowRadius,
+            initialShowStatus: initialShowStatus
+        )
         return self
     }
     
@@ -59,7 +67,7 @@ public struct DemoSlider: View, SliderProtocol {
 struct Drawer_Previews : PreviewProvider {
     static var previews: some View {
         Drawer().setMain(view: DemoMain())
-                .setSlider(view: DemoSlider.init(type: .leftRear))
+            .setSlider(view: DemoSlider.init(type: .leftRear), initialShowStatus: .hide)
     }
 }
 #endif

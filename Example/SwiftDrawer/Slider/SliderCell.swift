@@ -9,8 +9,15 @@
 import SwiftUI
 
 struct SliderCell : View {
+    
     private let img: String
     private let title: String
+
+    init(imgName: String, title: String) {
+        self.img = imgName
+        self.title = title
+    }
+    
     var body: some View {
         GeometryReader { proxy in
             HStack {
@@ -19,10 +26,5 @@ struct SliderCell : View {
             }
             .frame(width: proxy.size.width, alignment: .leading)
         }
-    }
-    
-    init(imgName: String, title: String) {
-        self.img = imgName
-        self.title = title
     }
 }

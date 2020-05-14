@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct HeaderView : View {
+    
     var body: some View {
         HStack {
             Image("user").resizable().frame(width: 50, height: 50, alignment: .trailing)

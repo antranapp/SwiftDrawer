@@ -8,7 +8,9 @@
 
 import SwiftUI
 import SwiftDrawer
+
 struct HomeView : View {
+    
     @EnvironmentObject public var control: DrawerControl
 
     var body: some View {

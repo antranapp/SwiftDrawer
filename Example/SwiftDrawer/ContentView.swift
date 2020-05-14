@@ -8,10 +8,12 @@
 
 import SwiftUI
 import SwiftDrawer
+
 struct ContentView : View {
+    
     var body: some View {
         Drawer()
-            .setSlider(view: SliderView(type: .leftRear))
+            .setSlider(view: SliderView(type: .leftRear), initialShowStatus: .show)
             .setSlider(view: Slider2View(type: .rightFront))
             .setMain(view: HomeView())
     }

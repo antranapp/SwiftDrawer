@@ -81,7 +81,8 @@ public class SliderStatus: ObservableObject {
         }
     }
     
-    init(type: SliderType) {
+    init(type: SliderType, initialShowStatus: ShowStatus = .hide) {
         self.type = type
+        currentStatus = initialShowStatus
     }
 }
