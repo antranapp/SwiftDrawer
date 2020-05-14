@@ -8,11 +8,17 @@
 import Foundation
 import SwiftUI
 import Combine
+
+public typealias SliderShowStatusSignal = (SliderType, ShowStatus)
+public typealias SliderShowStatus = [SliderType: SliderStatus]
+
 public class DrawerControl: ObservableObject {
-//    public let objectDidChange = PassthroughSubject<DrawerControl, Never>()
+
+    public let showStatusSignal = PassthroughSubject<SliderShowStatusSignal, Never>()
     
     private var statusObserver = [AnyCancellable]()
-    private(set) var status = [SliderType: SliderStatus]() {
+    
+    private(set) var status = SliderShowStatus() {
         didSet {
             statusObserver.forEach {
                 $0.cancel()
@@ -38,7 +44,7 @@ public class DrawerControl: ObservableObject {
     private(set) var main: AnyView?
     @Published
     private(set) var maxShowRate: CGFloat = .zero
-
+    
     public func setSlider<Slider: SliderViewProtocol>(view: Slider,
                                                       widthType: SliderWidth = .percent(rate: 0.6),
                                                       shadowRadius: CGFloat = 10,
@@ -62,12 +68,17 @@ public class DrawerControl: ObservableObject {
         if haveMoving {
             return
         }
-        self.status[type]?.currentStatus = isShow ? .show: .hide
+        
+        let currentStatus: ShowStatus = isShow ? .show: .hide
+        self.status[type]?.currentStatus = currentStatus
+        
+        showStatusSignal.send((type, currentStatus))
     }
     
     public func hideAllSlider() {
         self.status.forEach {
             $0.value.currentStatus = .hide
+            showStatusSignal.send(($0.key, .hide))
         }
     }
 }

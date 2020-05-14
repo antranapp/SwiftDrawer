@@ -29,7 +29,7 @@ public enum SliderWidth {
     case percent(rate: CGFloat)
 }
 
-public enum ShowStatus {
+public enum ShowStatus: Equatable {
     case show
     case hide
     case moving(offset: CGFloat)

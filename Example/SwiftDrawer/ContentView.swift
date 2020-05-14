@@ -11,9 +11,11 @@ import SwiftDrawer
 
 struct ContentView : View {
     
+    @State var sliderState: [SliderType: ShowStatus] = [.leftRear: .hide, .rightFront: .hide]
+    
     var body: some View {
-        Drawer()
-            .setSlider(view: SliderView(type: .leftRear), initialShowStatus: .show)
+        return Drawer(sliderState: self.$sliderState)
+            .setSlider(view: SliderView(type: .leftRear), initialShowStatus: self.sliderState[.leftRear] ?? .hide)
             .setSlider(view: Slider2View(type: .rightFront))
             .setMain(view: HomeView())
     }
