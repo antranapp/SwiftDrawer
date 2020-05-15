@@ -12,17 +12,30 @@ import SwiftDrawer
 struct HomeView : View {
     
     @EnvironmentObject public var control: DrawerControl
+    
+    @EnvironmentObject public var appState: AppState
 
     var body: some View {
         NavigationView {
-    
-            Text("Home View in Main")
-                .navigationBarTitle(Text("Home"), displayMode: .automatic)
-                .navigationBarItems(leading: Image("menu").onTapGesture(perform: {
-                    self.control.show(type: .leftRear, isShow: true)
-                }), trailing: Text("right").onTapGesture {
-                    self.control.show(type: .rightFront, isShow: true)
-                })
+            List {
+                Text("Home View in Main")
+                    .navigationBarTitle(Text("Home"), displayMode: .automatic)
+                    .navigationBarItems(leading: Image("menu").onTapGesture(perform: {
+                        let leftMenuStatus = self.appState.sliderState[.leftRear] ?? .hide
+                        let isShow = leftMenuStatus == .hide
+                        self.control.show(type: .leftRear, isShow: isShow)
+                    }), trailing: Text("Right").onTapGesture {
+                        self.control.show(type: .rightFront, isShow: true)
+                    })
+                
+                Toggle(isOn: self.$appState.isOn) {
+                    Text("isOn")
+                }
+
+                Button(action: {
+                    print(self.appState.sliderState[.leftRear].debugDescription)
+                }) { Text("Show appState") }
+            }
         }
         .foregroundColor(Color.red)
     }

@@ -1,9 +1,5 @@
 //
-//  DrawerDefine.swift
-//  DrawerDemo
-//
-//  Created by Millman on 2019/6/26.
-//  Copyright © 2019 Millman. All rights reserved.
+//  Copyright © 2019 Millman, 2020 An Tran. All rights reserved.
 //
 
 import Foundation

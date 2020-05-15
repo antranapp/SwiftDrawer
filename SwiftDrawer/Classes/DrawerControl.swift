@@ -1,8 +1,5 @@
 //
-//  DrawerControl.swift
-//  SwiftDrawer
-//
-//  Created by Millman on 2019/6/30.
+//  Copyright © 2019 Millman, 2020 An Tran. All rights reserved.
 //
 
 import Foundation
@@ -18,7 +15,7 @@ public class DrawerControl: ObservableObject {
     
     private var statusObserver = [AnyCancellable]()
     
-    private(set) var status = SliderShowStatus() {
+    public private(set) var status = SliderShowStatus() {
         didSet {
             statusObserver.forEach {
                 $0.cancel()
