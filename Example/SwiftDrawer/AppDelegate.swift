@@ -1,9 +1,5 @@
 //
-//  AppDelegate.swift
-//  SwiftDrawer
-//
-//  Created by MillmanY on 06/28/2019.
-//  Copyright (c) 2019 MillmanY. All rights reserved.
+//  Copyright (c) 2019 MillmanY, 2020 An Tran. All rights reserved.
 //
 
 import UIKit

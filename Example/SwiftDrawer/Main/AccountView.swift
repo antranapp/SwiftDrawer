@@ -18,8 +18,8 @@ struct AccountView : View {
             VStack {
                 Image("user").padding(.top, 10)
                 Divider()
-                Text("millman")
-                Text("mm@gmail.com")
+                Text("Johnny Appleseed")
+                Text("johnny@apple.com")
                 Spacer()
             }
             .navigationBarItems(leading: Image("menu").onTapGesture {

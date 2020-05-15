@@ -1,14 +1,12 @@
 //
-//  MainContainer.swift
-//  DrawerDemo
-//
-//  Created by Millman on 2019/6/27.
-//  Copyright © 2019 Millman. All rights reserved.
+//  Copyright © 2019 Millman, 2020 An Tran. All rights reserved.
 //
 
 import SwiftUI
 import Combine
+
 struct MainContainer<Content: View> : View {
+    
     @ObservedObject private var drawerControl: DrawerControl
     @ObservedObject private var leftRear: SliderStatus
     @ObservedObject private var rightRear: SliderStatus
@@ -19,12 +17,6 @@ struct MainContainer<Content: View> : View {
     private var maxMaskAlpha: CGFloat
     private var maskEnable: Bool
     var anyCancel: AnyCancellable?
-    var body: some View {
-        GeometryReader { proxy in
-            self.generateBody(proxy: proxy)
-        }.animation(.default)
-        
-    }
     
     init(content: Content,
          maxMaskAlpha: CGFloat = 0.25,
@@ -39,7 +31,15 @@ struct MainContainer<Content: View> : View {
         self.rightRear = drawerControl.status[.rightRear] ?? SliderStatus(type: .none)
     }
     
-    func generateBody(proxy: GeometryProxy) -> some View {
+    var body: some View {
+        GeometryReader { proxy in
+            self.generateBody(proxy: proxy)
+        }.animation(.default)
+    }
+    
+    // MARK: PRivate helpers
+    
+    private func generateBody(proxy: GeometryProxy) -> some View {
         let haveRear = self.leftRear.type != .none || self.rightRear.type != .none
         let maxRadius = haveRear ? max(self.leftRear.shadowRadius, self.rightRear.shadowRadius) : 0
         let parentSize = proxy.size
@@ -82,10 +82,12 @@ struct MainContainer<Content: View> : View {
             if self.leftRear.type != .none {
                 let range = 0...self.leftRear.sliderWidth
                 self.leftRear.currentStatus = will-range.lowerBound > range.upperBound-will ? .show : .hide
+                self.drawerControl.show(type: .leftRear, isShow: self.leftRear.currentStatus == .show)
             }
             if self.rightRear.type != .none {
                 let range = (-self.rightRear.sliderWidth)...0
                 self.rightRear.currentStatus = will-range.lowerBound < range.upperBound-will ? .show : .hide
+                self.drawerControl.show(type: .rightRear, isShow: self.rightRear.currentStatus == .show)
             }
             self.gestureCurrent = 0
         }))
