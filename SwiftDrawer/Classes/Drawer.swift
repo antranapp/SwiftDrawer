@@ -18,9 +18,7 @@ public struct Drawer: View {
     public var body: some View {
         ZStack {
             drawerControl.sliderView[.leftRear]
-            drawerControl.sliderView[.rightRear]
             drawerControl.main
-            drawerControl.sliderView[.rightFront]
             drawerControl.sliderView[.leftFront]
         }
         .onReceive(drawerControl.showStatusSignal) { status in
@@ -29,8 +27,8 @@ public struct Drawer: View {
     }
     
     @discardableResult
-    public func setMain<Main: View>(view: Main) -> Drawer {
-        drawerControl.setMain(view: view)
+    public func setMain<Main: View>(view: Main, isDragGestureEnabled: Bool) -> Drawer {
+        drawerControl.setMain(view: view, isDragGestureEnabled: isDragGestureEnabled)
         return self
     }
     
@@ -71,7 +69,7 @@ struct Drawer_Previews : PreviewProvider {
     
     static var previews: some View {
         Drawer(sliderState: .constant([.leftRear: .hide]))
-            .setMain(view: DemoMain())
+            .setMain(view: DemoMain(), isDragGestureEnabled: true)
             .setSlider(view: DemoSlider(type: .leftRear), initialShowStatus: .hide)
     }
 }

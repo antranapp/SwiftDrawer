@@ -9,7 +9,6 @@ struct MainContainer<Content: View> : View {
     
     @ObservedObject private var drawerControl: DrawerControl
     @ObservedObject private var leftRear: SliderStatus
-    @ObservedObject private var rightRear: SliderStatus
     
     @State private var gestureCurrent: CGFloat = 0
     
@@ -17,18 +16,20 @@ struct MainContainer<Content: View> : View {
     private var maxMaskAlpha: CGFloat
     private var maskEnable: Bool
     var anyCancel: AnyCancellable?
+    private var isDragGestureEnabled: Bool
     
     init(content: Content,
          maxMaskAlpha: CGFloat = 0.25,
          maskEnable: Bool = true,
-         drawerControl: DrawerControl) {
+         drawerControl: DrawerControl,
+         isDragGestureEnabled: Bool = true) {
         
         self.main = AnyView.init(content.environmentObject(drawerControl))
         self.maxMaskAlpha = maxMaskAlpha
         self.maskEnable = maskEnable
         self.drawerControl = drawerControl
         self.leftRear = drawerControl.status[.leftRear] ?? SliderStatus(type: .none)
-        self.rightRear = drawerControl.status[.rightRear] ?? SliderStatus(type: .none)
+        self.isDragGestureEnabled = isDragGestureEnabled
     }
     
     var body: some View {
@@ -40,79 +41,93 @@ struct MainContainer<Content: View> : View {
     // MARK: PRivate helpers
     
     private func generateBody(proxy: GeometryProxy) -> some View {
-        let haveRear = self.leftRear.type != .none || self.rightRear.type != .none
-        let maxRadius = haveRear ? max(self.leftRear.shadowRadius, self.rightRear.shadowRadius) : 0
+        return generateBaseView(proxy)
+            .ifConditional(isDragGestureEnabled) {
+                $0.gesture(DragGesture()
+                    .onChanged { (value) in
+                        let will = self.offset + (value.translation.width-self.gestureCurrent)
+                        if self.leftRear.type != .none {
+                            let range = 0...self.leftRear.sliderWidth
+                            var shouldMove: Bool {
+                                switch self.leftRear.currentStatus {
+                                    case .show, .moving: return true
+                                    case .hide: return value.startLocation.x < 10
+                                }
+                            }
+                            if range.contains(will) && shouldMove {
+                                self.leftRear.currentStatus = .moving(offset: will)
+                                self.gestureCurrent = value.translation.width
+                            }
+                        }
+                    }
+                    .onEnded { (value) in
+                        let will = self.offset + (value.translation.width-self.gestureCurrent)
+                        if self.leftRear.type != .none {
+                            switch self.leftRear.currentStatus {
+                                case .moving:
+                                    let range = 0...self.leftRear.sliderWidth
+                                    self.leftRear.currentStatus = will-range.lowerBound > range.upperBound-will ? .show : .hide
+                                    self.drawerControl.show(type: .leftRear, isShow: self.leftRear.currentStatus == .show)
+                                default: break
+                            }
+                        }
+                        self.gestureCurrent = 0
+                    }
+                )
+            }
+
+    }
+    
+    private func generateBaseView(_ proxy: GeometryProxy) -> some View {
+        
+        let haveRear = self.leftRear.type != .none
+        let maxRadius = haveRear ? self.leftRear.shadowRadius : 0
         let parentSize = proxy.size
         if haveRear {
             leftRear.parentSize = parentSize
-            rightRear.parentSize = parentSize
         }
         
-        return ZStack {
-            self.main
-            if maskEnable {
-               Color.black.opacity(Double(drawerControl.maxShowRate*self.maxMaskAlpha))
-                .animation(.easeIn(duration: 0.15))
-                    .onTapGesture {
-                    self.drawerControl.hideAllSlider()
-                }.padding(EdgeInsets(top: -proxy.safeAreaInsets.top, leading: 0, bottom: -proxy.safeAreaInsets.bottom, trailing: 0))
-            }
-        }
-        .offset(x: self.offset, y: 0)
-        .shadow(radius: maxRadius)
-        .gesture(DragGesture().onChanged({ (value) in
-            let will = self.offset + (value.translation.width-self.gestureCurrent)
-            if self.leftRear.type != .none {
-                let range = 0...self.leftRear.sliderWidth
-                if range.contains(will) {
-                    self.leftRear.currentStatus = .moving(offset: will)
-                    self.gestureCurrent = value.translation.width
+        return
+            ZStack {
+                self.main
+                if maskEnable {
+                    Color.black.opacity(Double(drawerControl.maxShowRate*self.maxMaskAlpha))
+                        .animation(.easeIn(duration: 0.15))
+                        .onTapGesture {
+                            self.drawerControl.hideAllSlider()
+                    }.padding(EdgeInsets(top: -proxy.safeAreaInsets.top, leading: 0, bottom: -proxy.safeAreaInsets.bottom, trailing: 0))
                 }
             }
-
-            if self.rightRear.type != .none {
-                let range = (-self.rightRear.sliderWidth)...0
-                if range.contains(will) {
-                    self.rightRear.currentStatus = .moving(offset: will)
-                    self.gestureCurrent = value.translation.width
-                }
-            }
-        }).onEnded({ (value) in
-            let will = self.offset + (value.translation.width-self.gestureCurrent)
-            if self.leftRear.type != .none {
-                let range = 0...self.leftRear.sliderWidth
-                self.leftRear.currentStatus = will-range.lowerBound > range.upperBound-will ? .show : .hide
-                self.drawerControl.show(type: .leftRear, isShow: self.leftRear.currentStatus == .show)
-            }
-            if self.rightRear.type != .none {
-                let range = (-self.rightRear.sliderWidth)...0
-                self.rightRear.currentStatus = will-range.lowerBound < range.upperBound-will ? .show : .hide
-                self.drawerControl.show(type: .rightRear, isShow: self.rightRear.currentStatus == .show)
-            }
-            self.gestureCurrent = 0
-        }))
+            .offset(x: self.offset, y: 0)
+            .shadow(radius: maxRadius)
     }
     
     var offset: CGFloat {
-        switch (self.leftRear.currentStatus, self.rightRear.currentStatus) {
-        case (.hide, .hide):
+        switch (self.leftRear.currentStatus) {
+        case .hide:
             return 0
-        case (.show, .hide):
+        case .show:
             return self.leftRear.sliderOffset()
-        case (.hide, .show):
-            return self.rightRear.sliderOffset()
         default:
             if self.leftRear.currentStatus.isMoving {
                 return self.leftRear.sliderOffset()
-            } else if self.rightRear.currentStatus.isMoving {
-                return self.rightRear.sliderOffset()
             }
         }
         return 0
     }
     
     var maxShowRate: CGFloat {
-        return max(self.leftRear.showRate, self.rightRear.showRate)
+        return self.leftRear.showRate
+    }
+}
+
+extension View {
+    func ifConditional<Content: View>(_ conditional: Bool, content: (Self) -> Content) -> some View {
+        if conditional {
+            return AnyView(content(self))
+        } else {
+            return AnyView(self)
+        }
     }
 }
 

@@ -24,9 +24,7 @@ struct HomeView : View {
                         let leftMenuStatus = self.appState.sliderState[.leftRear] ?? .hide
                         let isShow = leftMenuStatus == .hide
                         self.control.show(type: .leftRear, isShow: isShow)
-                    }), trailing: Text("Right").onTapGesture {
-                        self.control.show(type: .rightFront, isShow: true)
-                    })
+                    }))
                 
                 Toggle(isOn: self.$appState.isOn) {
                     Text("isOn")
@@ -38,6 +36,32 @@ struct HomeView : View {
             }
         }
         .foregroundColor(Color.red)
+    }
+}
+
+struct HomeView2: View {
+    @State private var users = ["Paul", "Taylor", "Adele"]
+    
+    @EnvironmentObject public var appState: AppState
+
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(users, id: \.self) { user in
+                    Text(user)
+                }
+                .onMove(perform: move)
+                .onDelete { _ in
+                    
+                }
+            }
+            .navigationBarItems(trailing: EditButton())
+            .environment(\.editMode, self.$appState.editMode)
+        }
+    }
+    
+    func move(from source: IndexSet, to destination: Int) {
+        users.move(fromOffsets: source, toOffset: destination)
     }
 }
 
