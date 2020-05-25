@@ -7,16 +7,14 @@ import SwiftUI
 
 public enum SliderType {
     case leftRear
-    case rightRear
     case leftFront
-    case rightFront
     case none
     var isLeft: Bool {
         return self == .leftRear || self == .leftFront
     }
     
     var isRear: Bool {
-        return self == .leftRear || self == .rightRear
+        return self == .leftRear
     }
 }
 

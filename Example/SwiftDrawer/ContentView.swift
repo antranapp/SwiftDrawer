@@ -14,9 +14,11 @@ import SwiftDrawer
 import SwiftUI
 
 class AppState: ObservableObject {
-    @Published var sliderState: [SliderType: ShowStatus] = [.leftRear: .hide, .rightFront: .hide]
+    @Published var sliderState: [SliderType: ShowStatus] = [.leftRear: .hide]
     
     @Published var isOn: Bool = false
+    
+    @Published var editMode: EditMode = .inactive
 }
 
 struct ContentView : View {
@@ -26,8 +28,7 @@ struct ContentView : View {
     var body: some View {
         return Drawer(sliderState: self.$appState.sliderState)
             .setSlider(view: SliderView(type: .leftRear, appState: appState), initialShowStatus: self.appState.sliderState[.leftRear] ?? .hide)
-            .setSlider(view: Slider2View(type: .rightFront))
-            .setMain(view: HomeView().environmentObject(appState))
+            .setMain(view: HomeView2().environmentObject(appState), isDragGestureEnabled: self.appState.editMode == .inactive)
     }
 }
 

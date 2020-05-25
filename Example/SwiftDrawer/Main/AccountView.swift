@@ -24,8 +24,6 @@ struct AccountView : View {
             }
             .navigationBarItems(leading: Image("menu").onTapGesture {
                 self.control.show(type: .leftRear, isShow: true)
-            }, trailing: Text("right").onTapGesture {
-                self.control.show(type: .rightFront, isShow: true)
             })
             .navigationBarTitle(Text("Account"), displayMode: .inline)
         }

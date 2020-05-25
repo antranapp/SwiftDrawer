@@ -43,7 +43,7 @@ public class DrawerControl: ObservableObject {
     private(set) var maxShowRate: CGFloat = .zero
     
     public func setSlider<Slider: SliderViewProtocol>(view: Slider,
-                                                      widthType: SliderWidth = .percent(rate: 0.6),
+                                                      widthType: SliderWidth = .percent(rate: 0.9),
                                                       shadowRadius: CGFloat = 10,
                                                       initialShowStatus: ShowStatus = .hide) {
         let status = SliderStatus(type: view.type, initialShowStatus: initialShowStatus)
@@ -54,8 +54,8 @@ public class DrawerControl: ObservableObject {
         self.sliderView[view.type] = AnyView(SliderContainer(content: view, drawerControl: self))
     }
 
-    public func setMain<Main: View>(view: Main) {
-        let container = MainContainer(content: view, drawerControl: self)
+    public func setMain<Main: View>(view: Main, isDragGestureEnabled: Bool = true) {
+        let container = MainContainer(content: view, drawerControl: self, isDragGestureEnabled: isDragGestureEnabled)
         self.main = AnyView(container)
     }
     

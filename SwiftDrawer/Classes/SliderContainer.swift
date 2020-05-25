@@ -21,7 +21,7 @@ struct SliderContainer<Content: SliderViewProtocol> : View {
         let parentSize = proxy.size
         self.status.parentSize = parentSize
         switch self.status.type {
-        case .leftFront,  .rightFront:
+        case .leftFront:
             let view = ZStack {
                 AnyView(Color.white).frame(maxWidth:
                     self.status.sliderWidth)
@@ -49,7 +49,7 @@ struct SliderContainer<Content: SliderViewProtocol> : View {
                 }))
                 .animation(.default)
             return AnyView.init(view)
-        case .leftRear, .rightRear:
+        case .leftRear:
             let view = self.slider
                 .offset(x: self.status.type.isLeft ? 0 : parentSize.width-self.status.sliderWidth, y: 0)
                 .frame(maxWidth: self.status.sliderWidth)
