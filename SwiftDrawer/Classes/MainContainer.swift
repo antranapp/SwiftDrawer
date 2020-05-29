@@ -47,13 +47,20 @@ struct MainContainer<Content: View> : View {
                     .onChanged { (value) in
                         let will = self.offset + (value.translation.width-self.gestureCurrent)
                         if self.leftRear.type != .none {
+                            
+                            // Fix the bug when users swipe in both direction,
+                            // then `onEnded` will not be called.
+                            guard abs(value.translation.height) < 5.0 else { return }
+                            
                             let range = 0...self.leftRear.sliderWidth
+                            
                             var shouldMove: Bool {
                                 switch self.leftRear.currentStatus {
                                     case .show, .moving: return true
                                     case .hide: return value.startLocation.x < 10
                                 }
                             }
+                            
                             if range.contains(will) && shouldMove {
                                 self.leftRear.currentStatus = .moving(offset: will)
                                 self.gestureCurrent = value.translation.width
@@ -62,6 +69,7 @@ struct MainContainer<Content: View> : View {
                     }
                     .onEnded { (value) in
                         let will = self.offset + (value.translation.width-self.gestureCurrent)
+                        
                         if self.leftRear.type != .none {
                             switch self.leftRear.currentStatus {
                                 case .moving:
@@ -71,6 +79,7 @@ struct MainContainer<Content: View> : View {
                                 default: break
                             }
                         }
+                        
                         self.gestureCurrent = 0
                     }
                 )
