@@ -57,7 +57,7 @@ struct MainContainer<Content: View> : View {
                             var shouldMove: Bool {
                                 switch self.leftRear.currentStatus {
                                     case .show, .moving: return true
-                                    case .hide: return value.startLocation.x < 10
+                                    case .hide: return value.startLocation.x < 20
                                 }
                             }
                             
