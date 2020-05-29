@@ -14,10 +14,8 @@ import SwiftDrawer
 import SwiftUI
 
 class AppState: ObservableObject {
-    @Published var sliderState: [SliderType: ShowStatus] = [.leftRear: .hide]
-    
+    var sliderState: [SliderType: ShowStatus] = [.leftRear: .hide]
     @Published var isOn: Bool = false
-    
     @Published var editMode: EditMode = .inactive
 }
 
