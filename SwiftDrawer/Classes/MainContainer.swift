@@ -5,8 +5,20 @@
 import SwiftUI
 import Combine
 
-struct MainContainer<Content: View> : View {
+public struct Configuration {
+    var maxMaskAlpha: CGFloat
+    var maskEnabled: Bool
+    var dragGestureEnabled: Bool
     
+    public init(maxMaskAlpha: CGFloat = 0.1, maskEnabled: Bool = true, dragGestureEnabled: Bool = true) {
+        self.maxMaskAlpha = maxMaskAlpha
+        self.maskEnabled = maskEnabled
+        self.dragGestureEnabled = dragGestureEnabled
+    }
+}
+
+struct MainContainer<Content: View> : View {
+        
     @ObservedObject private var drawerControl: DrawerControl
     @ObservedObject private var leftRear: SliderStatus
     
@@ -14,22 +26,20 @@ struct MainContainer<Content: View> : View {
     
     let main: AnyView
     private var maxMaskAlpha: CGFloat
-    private var maskEnable: Bool
+    private var maskEnabled: Bool
     var anyCancel: AnyCancellable?
     private var isDragGestureEnabled: Bool
     
     init(content: Content,
-         maxMaskAlpha: CGFloat = 0.25,
-         maskEnable: Bool = true,
          drawerControl: DrawerControl,
-         isDragGestureEnabled: Bool = true) {
+         configuration: Configuration) {
         
         self.main = AnyView.init(content.environmentObject(drawerControl))
-        self.maxMaskAlpha = maxMaskAlpha
-        self.maskEnable = maskEnable
+        self.maxMaskAlpha = configuration.maxMaskAlpha
+        self.maskEnabled = configuration.maskEnabled
         self.drawerControl = drawerControl
         self.leftRear = drawerControl.status[.leftRear] ?? SliderStatus(type: .none)
-        self.isDragGestureEnabled = isDragGestureEnabled
+        self.isDragGestureEnabled = configuration.dragGestureEnabled
     }
     
     var body: some View {
@@ -47,17 +57,16 @@ struct MainContainer<Content: View> : View {
                     .onChanged { (value) in
                         let will = self.offset + (value.translation.width-self.gestureCurrent)
                         if self.leftRear.type != .none {
-                            
-                            // Fix the bug when users swipe in both direction,
-                            // then `onEnded` will not be called.
-                            guard abs(value.translation.height) < 5.0 else { return }
-                            
                             let range = 0...self.leftRear.sliderWidth
                             
                             var shouldMove: Bool {
                                 switch self.leftRear.currentStatus {
                                     case .show, .moving: return true
-                                    case .hide: return value.startLocation.x < 20
+                                    case .hide:
+                                        // Fix the bug when users swipe in both direction,
+                                        // then `onEnded` will not be called.
+                                        guard abs(value.translation.height) < 7.0 else { return false }
+                                        return value.startLocation.x < 20
                                 }
                             }
                             
@@ -99,7 +108,7 @@ struct MainContainer<Content: View> : View {
         return
             ZStack {
                 self.main
-                if maskEnable {
+                if maskEnabled {
                     Color.black.opacity(Double(drawerControl.maxShowRate*self.maxMaskAlpha))
                         .animation(.easeIn(duration: 0.15))
                         .onTapGesture {
@@ -150,7 +159,7 @@ struct MainContainer_Previews : PreviewProvider {
         let view = DemoSlider.init(type: .leftRear)
         let c = DrawerControl()
         c.setSlider(view: view)
-        return MainContainer.init(content: DemoMain(), drawerControl: c)
+        return MainContainer(content: DemoMain(), drawerControl: c, configuration: Configuration())
     }
 }
 #endif

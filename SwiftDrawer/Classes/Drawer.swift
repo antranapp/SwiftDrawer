@@ -27,8 +27,8 @@ public struct Drawer: View {
     }
     
     @discardableResult
-    public func setMain<Main: View>(view: Main, isDragGestureEnabled: Bool) -> Drawer {
-        drawerControl.setMain(view: view, isDragGestureEnabled: isDragGestureEnabled)
+    public func setMain<Main: View>(view: Main, configuration: Configuration = Configuration()) -> Drawer {
+        drawerControl.setMain(view: view, configuration: configuration)
         return self
     }
     
@@ -69,7 +69,7 @@ struct Drawer_Previews : PreviewProvider {
     
     static var previews: some View {
         Drawer(sliderState: .constant([.leftRear: .hide]))
-            .setMain(view: DemoMain(), isDragGestureEnabled: true)
+            .setMain(view: DemoMain())
             .setSlider(view: DemoSlider(type: .leftRear), initialShowStatus: .hide)
     }
 }

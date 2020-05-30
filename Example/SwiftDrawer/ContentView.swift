@@ -26,7 +26,7 @@ struct ContentView : View {
     var body: some View {
         return Drawer(sliderState: self.$appState.sliderState)
             .setSlider(view: SliderView(type: .leftRear, appState: appState), initialShowStatus: self.appState.sliderState[.leftRear] ?? .hide)
-            .setMain(view: HomeView2().environmentObject(appState), isDragGestureEnabled: self.appState.editMode == .inactive)
+            .setMain(view: HomeView2().environmentObject(appState), configuration: Configuration(dragGestureEnabled: self.appState.editMode == .inactive))
     }
 }
 

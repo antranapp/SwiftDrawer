@@ -54,8 +54,8 @@ public class DrawerControl: ObservableObject {
         self.sliderView[view.type] = AnyView(SliderContainer(content: view, drawerControl: self))
     }
 
-    public func setMain<Main: View>(view: Main, isDragGestureEnabled: Bool = true) {
-        let container = MainContainer(content: view, drawerControl: self, isDragGestureEnabled: isDragGestureEnabled)
+    public func setMain<Main: View>(view: Main, configuration: Configuration = Configuration()) {
+        let container = MainContainer(content: view, drawerControl: self, configuration: configuration)
         self.main = AnyView(container)
     }
     
