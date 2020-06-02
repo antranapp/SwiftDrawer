@@ -50,6 +50,7 @@ struct HomeView2: View {
                 ForEach(users, id: \.self) { user in
                     Button(action: {
                         print(user)
+                        print(self.appState.sliderState[.leftRear].debugDescription)
                     }) {
                         Text(user)
                     }

@@ -105,8 +105,6 @@ struct MainContainer<Content: View> : View {
             leftRear.parentSize = parentSize
         }
         
-        print(maxRadius)
-        
         return
             ZStack {
                 self.main

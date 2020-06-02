@@ -35,8 +35,12 @@ public class DrawerControl: ObservableObject {
                 }
                 statusObserver.append(observer)
             }
+             
+            // Calculate the inital maxShowRate depending on the intializating values.
+            calculateInitialMaxShowRate()
         }
     }
+    
     @Published
     private(set) var sliderView = [SliderType: AnyView]()
     
@@ -51,7 +55,6 @@ public class DrawerControl: ObservableObject {
                                                       shadowRadius: CGFloat,
                                                       initialShowStatus: ShowStatus) {
         let status = SliderStatus(type: view.type, initialShowStatus: initialShowStatus)
-        
         status.maxWidth = widthType
         status.shadowRadius = shadowRadius
         self.status[view.type] = status
@@ -66,9 +69,7 @@ public class DrawerControl: ObservableObject {
     public func show(type: SliderType, isShow: Bool) {
         
         let haveMoving = self.status.first { $0.value.currentStatus.isMoving } != nil
-        if haveMoving {
-            return
-        }
+        guard !haveMoving else { return }
         
         let currentStatus: ShowStatus = isShow ? .show: .hide
         self.status[type]?.currentStatus = currentStatus
@@ -80,6 +81,16 @@ public class DrawerControl: ObservableObject {
         self.status.forEach {
             $0.value.currentStatus = .hide
             showStatusSignal.send(($0.key, .hide))
+        }
+    }
+    
+    private func calculateInitialMaxShowRate() {
+        status.forEach { info in
+            let maxRate = status.sorted { (s0, s1) -> Bool in
+                s0.value.showRate > s1.value.showRate
+            }.first?.value.showRate ?? 0
+            
+            maxShowRate = maxRate
         }
     }
 }
