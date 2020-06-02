@@ -105,6 +105,8 @@ struct MainContainer<Content: View> : View {
             leftRear.parentSize = parentSize
         }
         
+        print(maxRadius)
+        
         return
             ZStack {
                 self.main
@@ -158,7 +160,7 @@ struct MainContainer_Previews : PreviewProvider {
     static func generate() -> some View {
         let view = DemoSlider.init(type: .leftRear)
         let c = DrawerControl()
-        c.setSlider(view: view)
+        c.setSlider(view: view, widthType: .percent(rate: 0.8), shadowRadius: 5, initialShowStatus: .hide)
         return MainContainer(content: DemoMain(), drawerControl: c, configuration: Configuration())
     }
 }

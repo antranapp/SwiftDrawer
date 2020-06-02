@@ -21,11 +21,13 @@ public class DrawerControl: ObservableObject {
                 $0.cancel()
             }
             statusObserver.removeAll()
-            status.forEach { (info) in
-                let observer = info.value.objectDidChange.sink { [weak self](s) in
+            
+            status.forEach { info in
+                let observer = info.value.objectDidChange.sink { [weak self] s in
                     let maxRate = self?.status.sorted { (s0, s1) -> Bool in
                         s0.value.showRate > s1.value.showRate
-                        }.first?.value.showRate ?? 0
+                    }.first?.value.showRate ?? 0
+                    
                     if self?.maxShowRate == maxRate {
                         return
                     }
@@ -37,15 +39,17 @@ public class DrawerControl: ObservableObject {
     }
     @Published
     private(set) var sliderView = [SliderType: AnyView]()
+    
     @Published
     private(set) var main: AnyView?
+    
     @Published
     private(set) var maxShowRate: CGFloat = .zero
     
     public func setSlider<Slider: SliderViewProtocol>(view: Slider,
-                                                      widthType: SliderWidth = .percent(rate: 0.9),
-                                                      shadowRadius: CGFloat = 10,
-                                                      initialShowStatus: ShowStatus = .hide) {
+                                                      widthType: SliderWidth,
+                                                      shadowRadius: CGFloat,
+                                                      initialShowStatus: ShowStatus) {
         let status = SliderStatus(type: view.type, initialShowStatus: initialShowStatus)
         
         status.maxWidth = widthType

@@ -9,6 +9,7 @@ public enum SliderType {
     case leftRear
     case leftFront
     case none
+    
     var isLeft: Bool {
         return self == .leftRear || self == .leftFront
     }

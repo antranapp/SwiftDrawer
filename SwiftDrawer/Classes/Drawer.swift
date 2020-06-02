@@ -35,7 +35,7 @@ public struct Drawer: View {
     @discardableResult
     public func setSlider<Slider: SliderViewProtocol>(view: Slider,
                                                       widthType: SliderWidth = .percent(rate: 0.6),
-                                                      shadowRadius: CGFloat = 10,
+                                                      shadowRadius: CGFloat = 5,
                                                       initialShowStatus: ShowStatus = .hide) -> Drawer{
         drawerControl.setSlider(
             view: view,
