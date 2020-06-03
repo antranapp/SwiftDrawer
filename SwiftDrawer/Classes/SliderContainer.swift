@@ -76,7 +76,7 @@ struct SliderContainer_Previews : PreviewProvider {
     static func generate() -> some View {
         let view = DemoSlider.init(type: .leftRear)
         let c = DrawerControl()
-        c.setSlider(view: view)
+        c.setSlider(view: view, widthType: .percent(rate: 0.6), shadowRadius: 5, initialShowStatus: .hide)
         return SliderContainer(content: view, drawerControl: c)
     }
 }

@@ -7,7 +7,9 @@ import SwiftUI
 import Combine
 
 public class SliderStatus: ObservableObject {
+    
     public let objectDidChange = PassthroughSubject<SliderStatus, Never>()
+    
     var parentSize = CGSize.zero
     var sliderWidth: CGFloat {
         get {
@@ -80,5 +82,6 @@ public class SliderStatus: ObservableObject {
     init(type: SliderType, initialShowStatus: ShowStatus = .hide) {
         self.type = type
         currentStatus = initialShowStatus
+        showRate = currentStatus == .hide ? 0 : 1
     }
 }

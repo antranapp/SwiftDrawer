@@ -48,13 +48,17 @@ struct HomeView2: View {
         NavigationView {
             List {
                 ForEach(users, id: \.self) { user in
-                    Text(user)
+                    Button(action: {
+                        print(user)
+                        print(self.appState.sliderState[.leftRear].debugDescription)
+                    }) {
+                        Text(user)
+                    }
                 }
                 .onMove(perform: move)
-                .onDelete { _ in
-                    
-                }
+                .onDelete { _ in }
             }
+            .disabled(self.appState.sliderState[.leftRear] == .show)
             .navigationBarItems(trailing: EditButton())
             .environment(\.editMode, self.$appState.editMode)
         }
